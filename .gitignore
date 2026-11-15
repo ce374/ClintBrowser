@@ -1,0 +1,41 @@
+# Gradle / build outputs
+.gradle/
+build/
+app/build/
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Local configuration (contains signing secrets - never commit)
+local.properties
+
+# Signing keystores (never commit)
+*.jks
+*.keystore
+keystore.properties
+
+# Native build intermediates
+.cxx/
+*.so.bak
+
+# IntelliJ / Android Studio
+.idea/
+*.iml
+*.iws
+*.ipr
+captures/
+.externalNativeBuild/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log
+*.orig
+*.bak
+*~
