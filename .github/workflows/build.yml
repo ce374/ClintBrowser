@@ -168,7 +168,7 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add "public/$APK_NAME"
+          git add -f "public/$APK_NAME"
           if git diff --staged --quiet; then
             echo "No changes — APK already up to date."
           else

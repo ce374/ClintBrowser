@@ -7,6 +7,9 @@ app/build/
 *.ap_
 *.dex
 
+# Keep CI-published APKs in public/ (exception to the *.apk rule above)
+!public/*.apk
+
 # Local configuration (contains signing secrets - never commit)
 local.properties
 
