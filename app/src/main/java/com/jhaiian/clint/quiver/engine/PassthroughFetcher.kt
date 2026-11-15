@@ -12,6 +12,7 @@ import okhttp3.Response
 object PassthroughFetcher {
 
     private val client = OkHttpClient.Builder()
+        .dns(com.jhaiian.clint.privacy.EncryptedDns.resolver)
         .followRedirects(false)
         .followSslRedirects(false)
         .build()

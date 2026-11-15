@@ -298,7 +298,12 @@ class MainActivity : ClintActivity(), OverlayHostActivity, SnackbarHostActivity,
             "javascript_enabled" -> applyJavaScript()
             "block_third_party_cookies" -> applyCookiePolicy()
             "do_not_track", com.jhaiian.clint.privacy.PrivacyPrefs.GLOBAL_PRIVACY_CONTROL,
-            com.jhaiian.clint.privacy.PrivacyPrefs.WEBRTC_PROTECTION -> applyDoNotTrackSettings()
+            com.jhaiian.clint.privacy.PrivacyPrefs.WEBRTC_PROTECTION,
+            com.jhaiian.clint.privacy.PrivacyPrefs.CANVAS_FINGERPRINT_PROTECTION,
+            com.jhaiian.clint.privacy.PrivacyPrefs.WEBGL_FINGERPRINT_PROTECTION,
+            com.jhaiian.clint.privacy.PrivacyPrefs.AUDIO_FINGERPRINT_PROTECTION,
+            com.jhaiian.clint.privacy.PrivacyPrefs.SCREEN_FINGERPRINT_PROTECTION -> applyDoNotTrackSettings()
+            com.jhaiian.clint.privacy.PrivacyPrefs.ENCRYPTED_DNS -> applyEncryptedDnsSettings()
             com.jhaiian.clint.browser.webview.ClintAutofill.PREF_AUTOFILL_ENABLED -> applyAutofillSettings()
             "custom_user_agent" -> applyUserAgent()
             "quiver_guard_enabled" -> onQuiverGuardEnabled(prefs.getBoolean("quiver_guard_enabled", false))

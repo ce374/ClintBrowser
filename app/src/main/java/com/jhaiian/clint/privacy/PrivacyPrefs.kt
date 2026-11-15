@@ -19,6 +19,14 @@ object PrivacyPrefs {
     const val GLOBAL_PRIVACY_CONTROL = "global_privacy_control"
     const val EXIT_CLEAR_PENDING = "exit_clear_pending"
 
+    // Anti-fingerprinting protections (document-start JS injection).
+    const val CANVAS_FINGERPRINT_PROTECTION = "canvas_fingerprint_protection"
+    const val WEBGL_FINGERPRINT_PROTECTION = "webgl_fingerprint_protection"
+    const val AUDIO_FINGERPRINT_PROTECTION = "audio_fingerprint_protection"
+    const val SCREEN_FINGERPRINT_PROTECTION = "screen_fingerprint_protection"
+    // Encrypted DNS (DNS-over-HTTPS) for the app's own HTTP clients.
+    const val ENCRYPTED_DNS = "encrypted_dns"
+
     const val DEFAULT_STRIP_TRACKING_PARAMS = true
     const val DEFAULT_CLEAR_ON_EXIT = false
     const val DEFAULT_CLEAR_ON_EXIT_HISTORY = true
@@ -32,6 +40,14 @@ object PrivacyPrefs {
     const val DEFAULT_CLIPBOARD_CLEAR_SECONDS = 0
     const val DEFAULT_WEBRTC_PROTECTION = false
     const val DEFAULT_GLOBAL_PRIVACY_CONTROL = true
+    // Fingerprinting protections default ON — they are low-risk and high privacy value.
+    const val DEFAULT_CANVAS_FINGERPRINT_PROTECTION = true
+    const val DEFAULT_WEBGL_FINGERPRINT_PROTECTION = true
+    const val DEFAULT_AUDIO_FINGERPRINT_PROTECTION = true
+    const val DEFAULT_SCREEN_FINGERPRINT_PROTECTION = true
+    // Encrypted DNS defaults OFF — it can break connectivity on captive portals / enterprise
+    // networks, so it is opt-in rather than forced.
+    const val DEFAULT_ENCRYPTED_DNS = false
 
     val appLockTimeouts = listOf(0, 60, 300, 900)
     val clipboardDelays = listOf(0, 30, 60, 300)

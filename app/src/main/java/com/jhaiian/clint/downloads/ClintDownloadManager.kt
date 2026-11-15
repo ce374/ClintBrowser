@@ -33,6 +33,7 @@ object ClintDownloadManager {
     internal const val EVENT_CHANNEL_ID = "clint_download_events_v2"
 
     internal val httpClient: OkHttpClient = OkHttpClient.Builder()
+        .dns(com.jhaiian.clint.privacy.EncryptedDns.resolver)
         .connectTimeout(30, TimeUnit.SECONDS)
         .readTimeout(60, TimeUnit.SECONDS)
         .connectionPool(ConnectionPool(32, 5, TimeUnit.MINUTES))

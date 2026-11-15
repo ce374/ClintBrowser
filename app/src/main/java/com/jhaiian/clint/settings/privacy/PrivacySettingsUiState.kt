@@ -12,6 +12,12 @@ class PrivacySettingsUiState(
     initialStripTrackingParams: Boolean,
     initialGlobalPrivacyControl: Boolean,
     initialWebRtcProtection: Boolean,
+    initialBlockTrackingScripts: Boolean,
+    initialCanvasProtection: Boolean,
+    initialWebglProtection: Boolean,
+    initialAudioProtection: Boolean,
+    initialScreenProtection: Boolean,
+    initialEncryptedDns: Boolean,
     initialClearOnExit: Boolean,
     initialClearHistory: Boolean,
     initialClearCookies: Boolean,
@@ -35,6 +41,12 @@ class PrivacySettingsUiState(
     var stripTrackingParams by mutableStateOf(initialStripTrackingParams)
     var globalPrivacyControl by mutableStateOf(initialGlobalPrivacyControl)
     var webRtcProtection by mutableStateOf(initialWebRtcProtection)
+    var blockTrackingScripts by mutableStateOf(initialBlockTrackingScripts)
+    var canvasProtection by mutableStateOf(initialCanvasProtection)
+    var webglProtection by mutableStateOf(initialWebglProtection)
+    var audioProtection by mutableStateOf(initialAudioProtection)
+    var screenProtection by mutableStateOf(initialScreenProtection)
+    var encryptedDns by mutableStateOf(initialEncryptedDns)
     var clearOnExit by mutableStateOf(initialClearOnExit)
     var clearHistory by mutableStateOf(initialClearHistory)
     var clearCookies by mutableStateOf(initialClearCookies)

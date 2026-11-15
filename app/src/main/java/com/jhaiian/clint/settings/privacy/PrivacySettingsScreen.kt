@@ -16,6 +16,12 @@ import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.ManageAccounts
 import androidx.compose.material.icons.filled.Password
 import androidx.compose.material.icons.filled.VisibilityOff
+import androidx.compose.material.icons.filled.Brush
+import androidx.compose.material.icons.filled.Memory
+import androidx.compose.material.icons.filled.GraphicEq
+import androidx.compose.material.icons.filled.AspectRatio
+import androidx.compose.material.icons.filled.Block
+import androidx.compose.material.icons.filled.Dns
 
 import com.jhaiian.clint.ui.ClintSwitch
 import androidx.compose.runtime.Composable
@@ -38,6 +44,12 @@ fun PrivacySettingsScreen(
     onStripTrackingParamsClick: () -> Unit,
     onGlobalPrivacyControlClick: () -> Unit,
     onWebRtcProtectionClick: () -> Unit,
+    onBlockTrackingScriptsClick: () -> Unit,
+    onCanvasProtectionClick: () -> Unit,
+    onWebglProtectionClick: () -> Unit,
+    onAudioProtectionClick: () -> Unit,
+    onScreenProtectionClick: () -> Unit,
+    onEncryptedDnsClick: () -> Unit,
     onClearOnExitClick: () -> Unit,
     onClearOnExitConfirmed: (history: Boolean, cookies: Boolean, cache: Boolean, tabs: Boolean) -> Unit,
     onAppLockClick: () -> Unit,
@@ -120,6 +132,17 @@ fun PrivacySettingsScreen(
             )
             RowDivider(colors.divider)
             SettingsRow(
+                icon = androidx.compose.material.icons.Icons.Filled.Block,
+                title = stringResource(R.string.block_tracking_scripts_title),
+                summary = stringResource(R.string.block_tracking_scripts_summary),
+                colors = colors,
+                onClick = onBlockTrackingScriptsClick,
+                trailing = {
+                    ClintSwitch(checked = state.blockTrackingScripts)
+                }
+            )
+            RowDivider(colors.divider)
+            SettingsRow(
                 icon = androidx.compose.material.icons.Icons.Filled.GppGood,
                 title = stringResource(R.string.global_privacy_control_title),
                 summary = stringResource(R.string.global_privacy_control_summary),
@@ -138,6 +161,67 @@ fun PrivacySettingsScreen(
                 onClick = onWebRtcProtectionClick,
                 trailing = {
                     ClintSwitch(checked = state.webRtcProtection)
+                }
+            )
+        }
+
+        SettingsSectionLabel(stringResource(R.string.privacy_section_fingerprint))
+        SettingsSection(colors.cardBackground) {
+            SettingsRow(
+                icon = androidx.compose.material.icons.Icons.Filled.Brush,
+                title = stringResource(R.string.canvas_protection_title),
+                summary = stringResource(R.string.canvas_protection_summary),
+                colors = colors,
+                onClick = onCanvasProtectionClick,
+                trailing = {
+                    ClintSwitch(checked = state.canvasProtection)
+                }
+            )
+            RowDivider(colors.divider)
+            SettingsRow(
+                icon = androidx.compose.material.icons.Icons.Filled.Memory,
+                title = stringResource(R.string.webgl_protection_title),
+                summary = stringResource(R.string.webgl_protection_summary),
+                colors = colors,
+                onClick = onWebglProtectionClick,
+                trailing = {
+                    ClintSwitch(checked = state.webglProtection)
+                }
+            )
+            RowDivider(colors.divider)
+            SettingsRow(
+                icon = androidx.compose.material.icons.Icons.Filled.GraphicEq,
+                title = stringResource(R.string.audio_protection_title),
+                summary = stringResource(R.string.audio_protection_summary),
+                colors = colors,
+                onClick = onAudioProtectionClick,
+                trailing = {
+                    ClintSwitch(checked = state.audioProtection)
+                }
+            )
+            RowDivider(colors.divider)
+            SettingsRow(
+                icon = androidx.compose.material.icons.Icons.Filled.AspectRatio,
+                title = stringResource(R.string.screen_protection_title),
+                summary = stringResource(R.string.screen_protection_summary),
+                colors = colors,
+                onClick = onScreenProtectionClick,
+                trailing = {
+                    ClintSwitch(checked = state.screenProtection)
+                }
+            )
+        }
+
+        SettingsSectionLabel(stringResource(R.string.privacy_section_network))
+        SettingsSection(colors.cardBackground) {
+            SettingsRow(
+                icon = androidx.compose.material.icons.Icons.Filled.Dns,
+                title = stringResource(R.string.encrypted_dns_title),
+                summary = stringResource(R.string.encrypted_dns_summary),
+                colors = colors,
+                onClick = onEncryptedDnsClick,
+                trailing = {
+                    ClintSwitch(checked = state.encryptedDns)
                 }
             )
         }
